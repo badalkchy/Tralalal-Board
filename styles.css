@@ -1,16 +1,24 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
 body {
-    font-family: Arial, sans-serif;
+    font-family: Segoe UI, Roboto, "Helvetica Neue", sans-serif;
     display: flex;
     flex-direction: column;
-    height:100vh;
+    height:96vh;
     width: 100vw;
     background-image: url(Images/bg-rain-drops-on-window-shield.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
 :root {
     font-size: 10px;
 }
 #navbar{
-    border:2px solid blue;
+    border-top-left-radius: 10px;
+    border-top-right-radius:10px;
     position: fixed;
     top: 0;
     left: 0;
@@ -22,25 +30,145 @@ body {
     background-color: rgba(64, 144, 172, 0.65);
     color: white;
 }
+.menu{
+    list-style:none;
+    display: flex;
+
+}
+.menu > li{
+    display: inline-block;
+    font-size: 14px;
+    padding:8px 7px;
+    margin:0 4px;
+    background-color: rgba(64, 144, 172, 0.65);
+
+}
+.menu > .pointer:hover{
+    cursor:pointer;
+    background-color: rgba(67, 145, 173, 0.65);
+    color:rgba(255, 255, 255, 0.73);
+}
+#txt-input{
+    padding:0;
+    width:120px;
+}
+.menu > .menu-input input{
+    border:none;
+    height:30px;
+    width:100%;
+    background-color: rgba(64, 144, 172, 0.65);
+    padding-left:10px;
+    outline:none;
+
+}
+.menu > .menu-input input:focus{
+    background-color: white;
+
+}
+
+.menu .pointer .b{
+    font-weight:none;
+}
+.app-title{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:20px;
+}
+
+.actions{
+    padding:6px;
+
+}
+.actions .pointer{
+    font-size: 16px;
+    padding:7px;
+    margin:0px;
+    margin-left:8px;
+    background-color: rgba(64, 144, 172, 0.65);
+}
+.actions .pointer:hover{
+    cursor:pointer;
+    background-color: rgba(67, 145, 173, 0.65);
+    color:rgba(255, 255, 255, 0.73);
+}
+.board-menu {
+    position: fixed;
+    top: 50px;
+    right: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 0 20px;
+    color: black;
+    background-color: rgba(128, 128, 128, 0.3);
+    color: white;
+    font-size: 14px;
+}
+.board-menu .board-show-menu :hover, .board-menu .show:hover{
+    cursor:pointer;
+    color:rgb(210, 210, 210);
+}
 #container {
     display: flex;
     align-items: flex-start;  /*it take space by vertical content  */
     padding: 0 0.8rem 0.8rem;
-    width:100%;
-    margin-top: 100px;
-    border:2px solid red;
+    margin-top: 120px;
 }
 .list {
-    flex: 0 0 27rem;
+    flex: 0 0 23rem;
     display: flex;
     flex-direction: column;
     background-color: #e2e4e6;
     max-height: calc(100vh - 11.8rem);
     border-radius: 0.3rem;
     margin-right: 1rem;
-	display: inline-block;
     position:relative;
-    border:2px solid green;
+    display: block;
+    padding: 0.1rem 0.3rem;
+    /* border:2px solid green; */
+}
+.add-card-form{
+    padding: 0.65rem 0.6rem;
+    /* border:1px solid blue; */
+}
+.add-card-form-actions{
+    /* border:2px solid red; */
+    padding:0;
+    margin-top: 10px;
+}
+.add-card-form .btn{
+    font-size: 15px;
+    padding:0.8rem 1rem;
+    border-radius:5px;
+    border:none;
+    background-color: olive;
+    color:white;
+}
+.add-card-form .btn:hover{
+    background-color: rgb(152, 152, 79);
+    cursor:pointer;
+}
+.add-card-form .fas{
+    /* border:1px solid red; */
+    font-size: 30px;
+    position:absolute;
+    padding:0.2rem;
+    margin-left:7px;
+    color:rgb(79, 79, 79);
+}
+
+.add-card-form .fas:hover{
+    color:rgb(123, 123, 123);
+    cursor:pointer;
+}
+.add-card-form .full-width-input{
+    width:100%;
+    height:60px;
+    resize:none;
+    border:none;
+    outline:none;
+    padding:10px;
 }
 .btn1{
     background: none;
@@ -52,6 +180,7 @@ body {
     position:absolute;
     top:0px;
     right:5px;
+    /* border:2px solid green; */
     
 }
 .add-btn {
@@ -62,19 +191,8 @@ body {
     background: none;
     border: none;
     color: inherit;
-    padding: 0;
+    padding: 0rem;
     cursor: pointer;
-}
-
-.list {
-    flex: 0 0 27rem;
-    display: flex;
-    flex-direction: column;
-    background-color: #e2e4e6;
-    max-height: calc(100vh - 11.8rem);
-    border-radius: 0.3rem;
-    margin-right: 1rem;
-	display: inline-block;
 }
 
 .list-title {
@@ -83,6 +201,7 @@ body {
     color: #333;
     padding: 1rem;
     margin: 0;
+    /* border:2px solid blue; */
 }
 
 .list-items {
@@ -107,6 +226,7 @@ body {
     margin-bottom: 0.6rem;
     word-wrap: break-word;
     cursor: pointer;
+    /* border:2px solid orange; */
 }
 
 
@@ -122,6 +242,8 @@ body {
     padding: 1rem;
     text-align: left;
     cursor: pointer;
+    width:200px;
+    /* border:2px solid red; */
 }
 
 .add-btn:hover {
